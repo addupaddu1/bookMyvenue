@@ -1,0 +1,12 @@
+{
+  "name": "bookmyvenue",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BookMyVenue - multi-college venue discovery and booking platform (TCET first).",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed.js",
+    "test": "node scripts/test-isolation.js"
+  }
+}
