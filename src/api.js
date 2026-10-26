@@ -2,6 +2,7 @@
 // 'BOOKER' or 'ADMIN'. The role check happens here on the server before any handler runs.
 const { one, all, run } = require('./db');
 const config = require('./config');
+const dates = require('./dates');
 const v = require('./validate');
 const { HttpError } = require('./errors');
 const auth = require('./auth');
@@ -26,7 +27,13 @@ const publicUser = (u) => ({
 
 // ---------- public ----------
 
-route('GET', '/api/meta', 'public', () => ({ eventTypes: config.EVENT_TYPES }));
+route('GET', '/api/meta', 'public', () => ({
+  eventTypes: config.EVENT_TYPES,
+  timezone: config.TIMEZONE,
+  today: dates.todayStr(),
+  now: dates.nowHM(),
+  bookingWindowDays: config.BOOKING_WINDOW_DAYS,
+}));
 
 route('GET', '/api/colleges', 'public', () =>
   all(`SELECT id, name, logo, location, description, status FROM colleges

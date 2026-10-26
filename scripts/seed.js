@@ -28,7 +28,8 @@ const colleges = [
   },
 ];
 
-// PLACEHOLDER details (location text, facilities, rules) - the TCET admin should
+// SAMPLE details: only the venue names and seat counts are real. Descriptions, facilities,
+// rules and locations below are sample text written without knowing TCET's halls - the TCET admin should
 // correct these in Admin > Manage Venues. Names and capacities are as given.
 const hall = (name, capacity, extra) => ({
   name,
@@ -42,7 +43,7 @@ const hall = (name, capacity, extra) => ({
 const venues = [
   hall('Auditorium', 500, {
     sort_order: 1,
-    location: 'Main building (placeholder - please update)',
+    location: '',
     description:
       'The largest venue on campus, suited to college-wide events, large seminars, annual functions and performances.',
     facilities: ['Stage', 'Sound system', 'Projector & screen', 'Air conditioning', 'Green room', 'Podium & mics'],
@@ -52,7 +53,7 @@ const venues = [
   }),
   hall('Multi Purpose Hall', 250, {
     sort_order: 2,
-    location: 'Campus building (placeholder - please update)',
+    location: '',
     description:
       'A flexible hall for workshops, department events, competitions and mid-size gatherings with movable seating.',
     facilities: ['Movable seating', 'Projector & screen', 'Sound system', 'Air conditioning', 'Wi-Fi'],
@@ -62,7 +63,7 @@ const venues = [
   }),
   hall('Convocation Hall', 250, {
     sort_order: 3,
-    location: 'Campus building (placeholder - please update)',
+    location: '',
     description: 'A formal hall used for convocations, ceremonies, formal lectures and official gatherings.',
     facilities: ['Stage', 'Podium & mics', 'Projector & screen', 'Sound system', 'Air conditioning'],
     suitable_event_types: ['Guest lecture', 'Seminar', 'Orientation', 'Meeting', 'Other'],
@@ -72,7 +73,7 @@ const venues = [
   ...[1, 2, 3, 4].map((n) =>
     hall(`Seminar Hall ${n} (SH${n})`, 120, {
       sort_order: 3 + n,
-      location: 'Campus building (placeholder - please update)',
+      location: '',
       description: `Seminar Hall ${n} suits department seminars, guest talks, presentations and club meetings.`,
       facilities: ['Projector & screen', 'Audio system', 'Whiteboard', 'Air conditioning'],
       suitable_event_types: ['Seminar', 'Workshop', 'Guest lecture', 'Meeting', 'Technical event'],
