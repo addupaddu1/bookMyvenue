@@ -55,6 +55,16 @@ node scripts/add-college.js vit "Example Institute of Technology" admin@vit.exam
 
 The new college appears in the **Change college** list, and its admin can only manage that college. Booking IDs use the code as a prefix, for example `VIT-2026-0001`.
 
+## Forgot a password?
+
+Bookers can ask their admin to reset it (**Authorized users**, then **Reset password**). If the **admin** is locked out, run this on the computer that hosts the site (stop the site first with Ctrl+C):
+
+```bash
+node scripts/reset-password.js admin@tcet.example "MyNewPassword1"
+```
+
+Leave off the password to get a random one. After 5 wrong attempts an account is locked for 15 minutes; restarting the site clears that straight away.
+
 ## Booking flow
 
 Open BookMyVenue, select a college, explore venues, view details and check availability, log in, fill in the booking form, review the summary, send. The request gets an ID like `TCET-2026-0001` and starts as **Pending**. The college admin approves, rejects or cancels it. The booker tracks the status on their dashboard.
